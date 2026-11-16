@@ -1,0 +1,11 @@
+import {chromium} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+await mkdir('docs/screenshots',{recursive:true});
+const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+await page.goto('http://127.0.0.1:4328/');
+await page.evaluate(async()=>{await document.fonts.ready;await document.querySelector('#hero-image').decode();});
+await page.screenshot({path:'docs/screenshots/cover-desktop.png'});
+await page.setViewportSize({width:390,height:1020});
+await page.screenshot({path:'docs/screenshots/cover-mobile.png'});
+await browser.close();

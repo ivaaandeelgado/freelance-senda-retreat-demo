@@ -1,0 +1,16 @@
+{
+  "testedAt": "2026-11-16T09:12:26.630Z",
+  "source": "exports/Senda-OpenDesign.html",
+  "protocol": "file:",
+  "passed": true,
+  "checks": [
+    "all local assets decoded",
+    "six stays rendered",
+    "landscape switch",
+    "quoted stay saved",
+    "no JavaScript errors",
+    "no HTTP requests"
+  ],
+  "errors": [],
+  "remote": []
+}

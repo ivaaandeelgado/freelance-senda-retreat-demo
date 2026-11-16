@@ -1,0 +1,12 @@
+node_modules/
+.agents/skills/
+dist/
+exports/
+test-results/
+playwright-report/
+.agents/skills/impeccable/scripts/impeccable-engine*
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/config.local.json
+

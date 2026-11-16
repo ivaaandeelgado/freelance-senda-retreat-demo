@@ -1,0 +1,47 @@
+ESPAÑOL
+
+Título:
+Senda — Web de escapadas con planificador interactivo
+
+Mi contribución:
+Diseño de interfaz, desarrollo frontend y pruebas.
+
+Descripción:
+Demo personal de una web de alojamientos y escapadas. Diseñé una identidad visual propia y desarrollé un recorrido completo: exploración por paisaje, filtros de fechas y capacidad, favoritos, presupuesto detallado con extras y descarga del plan en texto o calendario.
+
+La interfaz se adapta a móvil y escritorio y contempla estados vacíos, errores, navegación por teclado y almacenamiento local desactivado. Las fotografías y fuentes se sirven localmente. Impeccable guio la dirección y revisión de diseño; utilicé referencias editoriales de OpenDesign.
+
+Proyecto conceptual independiente. Alojamientos y precios ficticios; sin reservas ni cobros reales.
+
+Skills:
+Web Design, Responsive Design, HTML, CSS, JavaScript, Front-End Development, User Interface Design.
+
+Material:
+docs/screenshots/cover-desktop.png (imagen principal)
+docs/screenshots/cover-mobile.png
+docs/screenshots/desktop.png
+docs/screenshots/mobile.png
+docs/screenshots/planner-desktop.png
+docs/screenshots/saved-plan-mobile.png
+exports/Senda-OpenDesign.html
+
+ENGLISH
+
+Title:
+Senda — Retreat Website & Interactive Stay Planner
+
+Role:
+UI design, frontend development and testing.
+
+Description:
+An independent portfolio concept for a nature-retreat website. I created the visual direction and implemented landscape-based browsing, date and capacity filters, favorites, an itemized stay estimate with optional extras, and itinerary downloads in text and calendar formats.
+
+The responsive interface includes empty and error states, keyboard navigation, reduced-motion support, and resilient local storage. Photography and fonts are self-hosted. The design process uses Impeccable and adapts editorial guidance from OpenDesign.
+
+Personal demonstration with fictional properties, availability and prices. No real reservations or payments.
+
+Suggested relevance:
+Tourism landing pages, accommodation catalogues, interactive estimators, responsive website improvements and small frontend features.
+
+Do not describe this as delivered client work, a WordPress build, or a live booking platform.
+

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#234b39">
+ <title>Senda — Un rato fuera</title>
+ <meta name="description" content="Senda: una demo de diseño web y planificación de escapadas. Explora refugios imaginarios, calcula una estancia y guarda tu plan.">
+ <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+ <link rel="preload" href="./assets/archivo-black-1.ttf" as="font" type="font/ttf" crossorigin>
+ <link rel="preload" href="./assets/hero-lake.webp" as="image">
+ <link rel="stylesheet" href="./styles.css">
+ <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+ <a class="skip-link" href="#refugios">Saltar a los refugios</a>
+ <div class="demo-ribbon"><span>Una idea de escapada. Una demo de portfolio.</span><span>Hecha por Iván Delgado</span></div>
+ <header class="site-header">
+  <a class="wordmark" href="#" aria-label="Senda, inicio">senda<span data-icon="up"></span></a>
+  <nav aria-label="Navegación principal"><a href="#refugios">Los refugios</a><a href="#la-idea">La idea</a><a href="#preguntas">Lo que necesitas saber</a></nav>
+  <div class="header-actions"><button id="favorites-toggle" class="icon-button" type="button" aria-label="Ver favoritos, 0 guardados" aria-pressed="false"><span data-icon="heart"></span><span id="favorites-count">0</span></button><button id="open-plan" class="button button-small button-dark" type="button"><span data-icon="bag"></span>Tu plan<span id="plan-dot" hidden class="plan-dot"></span></button></div>
+ </header>
+ <main>
+  <section class="hero" aria-labelledby="hero-title">
+   <div class="hero-scene"><img id="hero-image" src="./assets/hero-lake.webp" width="1920" height="1120" alt="Un lago entre montañas y un refugio de madera junto al agua" fetchpriority="high"><div class="hero-shade"></div>
+    <div class="hero-copy"><h1 id="hero-title">Un rato<br><span>fuera.</span></h1><p id="scene-line">Un lugar para volver a ti.</p><p class="hero-description">Refugios pequeños.<br>Tiempo para lo que importa.</p></div>
+    <div class="scene-control" aria-label="Explorar paisajes"><button type="button" data-scene="bosque" aria-pressed="false"><span data-icon="tree"></span>Bosque</button><button type="button" data-scene="montana" aria-pressed="true"><span data-icon="mountain"></span>Montaña</button><button type="button" data-scene="mar" aria-pressed="false"><span data-icon="wave"></span>Mar</button></div>
+    <span class="photo-caption" id="scene-caption">Lago, montaña y cero prisa.</span>
+   </div>
+   <form class="search-form" id="search-form" novalidate>
+    <div class="search-field"><label for="landscape">¿Dónde te perderías?</label><select id="landscape" name="landscape"><option value="all">Cualquier paisaje</option><option value="bosque">En el bosque</option><option value="montana">Entre montañas</option><option value="mar">Cerca del mar</option></select></div>
+    <div class="search-field"><label for="checkin">Llegada</label><input id="checkin" name="checkin" type="date" required aria-describedby="search-error"></div>
+    <div class="search-field"><label for="checkout">Salida</label><input id="checkout" name="checkout" type="date" required aria-describedby="search-error"></div>
+    <div class="search-field guests-field"><label for="guests">¿Cuántos vais?</label><select id="guests" name="guests"><option value="1">1 persona</option><option value="2" selected>2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option><option value="5">5 personas</option><option value="6">6 personas</option></select></div>
+    <button class="button button-lime search-submit" type="submit">Encontrar refugio<span data-icon="arrow"></span></button>
+    <p id="search-error" class="form-error" role="alert" hidden></p>
+   </form>
+   <div class="hero-foot"><span><span data-icon="compass"></span>Menos agenda. Más aire.</span><span>Explora el catálogo imaginario<span data-icon="down"></span></span></div>
+  </section>
+
+  <section class="collection section-wrap" id="refugios" aria-labelledby="collection-title">
+   <div class="section-heading"><h2 id="collection-title">Un lugar.<br>Y ya tienes un plan.</h2><div class="collection-intro"><p>Una ventana al bosque, una orilla tranquila,<br class="desktop-only"> una casa a la que apetece llegar.</p><p class="subtle">Seis refugios de ejemplo. Elige el tuyo.</p></div></div>
+   <div class="filter-bar">
+    <div class="landscape-filters" role="group" aria-label="Filtrar por paisaje"><button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">Todos<span>6</span></button><button class="filter-chip" type="button" data-filter="bosque" aria-pressed="false"><span data-icon="tree"></span>Bosque</button><button class="filter-chip" type="button" data-filter="montana" aria-pressed="false"><span data-icon="mountain"></span>Montaña</button><button class="filter-chip" type="button" data-filter="mar" aria-pressed="false"><span data-icon="wave"></span>Mar</button></div>
+    <div class="filter-options"><label class="check-label"><input type="checkbox" id="pets">Con mi perro</label><label class="sort-label"><span class="sr-only">Ordenar refugios</span><select id="sort"><option value="recommended">Nuestra selección</option><option value="price-asc">Menor precio</option><option value="price-desc">Mayor precio</option></select></label></div>
+   </div>
+   <div class="results-toolbar"><p id="result-count" role="status" aria-live="polite">Preparando los refugios…</p><label class="budget-control" for="max-price">Tarifa base hasta <output id="price-output" for="max-price">220 €</output><input type="range" min="80" max="220" step="10" value="220" id="max-price"></label></div>
+   <div id="stay-grid" class="stay-grid"></div>
+   <div id="empty-state" class="empty-state" hidden><span data-icon="compass"></span><h3>Vamos a abrir un poco el mapa.</h3><p id="empty-message">No hay refugios con esta combinación. Prueba otro paisaje o amplía el presupuesto.</p><button type="button" class="button button-dark" id="reset-filters">Ver todos los refugios</button></div>
+   <noscript><p>Activa JavaScript para explorar los refugios y calcular una estancia. Esta web es una demostración sin reservas reales.</p></noscript>
+   <p class="catalog-note">Alojamientos, disponibilidad y precios ficticios. Las fotografías ilustran el ambiente.</p>
+  </section>
+
+  <section id="la-idea" class="idea-section" aria-labelledby="idea-title">
+   <div class="idea-image"><img src="./assets/forest.webp" alt="Rayos de sol que se abren paso entre los árboles" width="1400" height="1000" loading="lazy"><div class="image-note"><span data-icon="tree"></span>Deja que el día vaya a su ritmo.</div></div>
+   <div class="idea-copy"><h2 id="idea-title">El lujo de<br><span>no tener<br>que hacer.</span></h2><p>No hace falta cruzar medio mundo para cambiar de perspectiva. A veces basta una casa pequeña, un camino nuevo y el móvil un poco más lejos.</p><div class="idea-details"><p><strong>Lleva poco.</strong>Un libro, algo de abrigo y ganas de salir.</p><p><strong>Deja espacio.</strong>Los mejores ratos no siempre estaban en el plan.</p></div><button class="text-button" id="surprise-me" type="button">Encuentra un refugio para mí<span data-icon="arrow"></span></button></div>
+  </section>
+
+  <section id="preguntas" class="faq-section section-wrap" aria-labelledby="faq-title"><div><h2 id="faq-title">Lo sencillo,<br>también al planear.</h2><p>Un par de cosas antes de hacer la maleta.</p></div><div class="faq-list">
+   <details><summary>¿Puedo reservar una estancia aquí?<span data-icon="plus"></span></summary><p>Senda es una demo de portfolio de Iván Delgado. Puedes explorar, calcular precios y guardar un plan, pero no se hacen reservas, cobros ni envíos a alojamientos.</p></details>
+   <details><summary>¿Cómo se calcula el presupuesto?<span data-icon="plus"></span></summary><p>El presupuesto de ejemplo suma cada noche, la preparación del refugio y los extras que elijas. Viernes y sábados tienen un suplemento del 20 %. Desde tres noches se descuenta un 10 % del alojamiento. Verás el desglose antes de guardar.</p></details>
+   <details><summary>¿Dónde queda guardado mi plan?<span data-icon="plus"></span></summary><p>Solo en este navegador. No pedimos nombres, correos ni datos de pago. Puedes descargarlo en texto, añadirlo a tu calendario o borrarlo cuando quieras.</p></details>
+   <details><summary>¿Puedo ir con mi perro?<span data-icon="plus"></span></summary><p>Activa «Con mi perro» para filtrar los refugios que lo admiten en este catálogo de ejemplo. La capacidad máxima siempre aparece en la ficha.</p></details>
+  </div></section>
+  <section class="closing"><p>Tu próximo buen recuerdo<br>podría empezar por salir.</p><a href="#refugios" class="button button-dark">Volver a los refugios<span data-icon="arrow"></span></a><span class="closing-mark" aria-hidden="true">senda.</span></section>
+ </main>
+ <footer class="footer"><a href="#" class="wordmark">senda<span data-icon="up"></span></a><div><p>Una demo independiente de <strong>Iván Delgado Galvan</strong>.</p><p>Sin reservas ni pagos reales. Fotografía de ambiente: Unsplash.</p></div><button type="button" id="privacy-button" class="text-button">Tus datos en esta demo<span data-icon="arrow"></span></button></footer>
+ <dialog id="stay-dialog" class="stay-dialog" aria-labelledby="stay-title"><div id="stay-content"></div></dialog>
+ <dialog id="plan-dialog" class="plan-dialog" aria-labelledby="plan-title"><div class="dialog-top"><h2 id="plan-title">Tu próxima escapada.</h2><button type="button" class="icon-button" data-close="plan-dialog" aria-label="Cerrar plan"><span data-icon="close"></span></button></div><div id="plan-content"></div></dialog>
+ <dialog id="privacy-dialog" class="privacy-dialog" aria-labelledby="privacy-title"><div class="dialog-top"><h2 id="privacy-title">Solo en tu dispositivo.</h2><button type="button" class="icon-button" data-close="privacy-dialog" aria-label="Cerrar información de datos"><span data-icon="close"></span></button></div><p>Esta demo guarda tus favoritos y tu último plan en el almacenamiento local de este navegador. No utiliza cuentas, analítica ni cookies de seguimiento. Las imágenes y fuentes se sirven junto con la web.</p><p>El precio y la disponibilidad son datos ficticios. No se envía ninguna solicitud ni se realiza un pago.</p><button type="button" class="button button-dark" id="clear-data">Borrar mis favoritos y mi plan</button><p id="privacy-feedback" role="status"></p></dialog>
+ <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

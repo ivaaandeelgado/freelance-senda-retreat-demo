@@ -1,0 +1,14 @@
+SENDA — VALIDACIÓN
+Fecha: 2026-11-16T09:15:08.597Z
+
+8 pruebas de lógica: aprobadas.
+7 pruebas de navegador: aprobadas. 0 fallos.
+Axe A/AA: sin infracciones detectadas en inicio y calculadora a 1440, 390 y 320 px.
+Esto no sustituye una auditoría manual completa de accesibilidad.
+Se verificaron teclado, persistencia, archivos descargados, errores de fechas, filtros y movimiento reducido.
+HTML autónomo abierto con file: en Chrome: sin solicitudes HTTP ni errores JavaScript; escenas y plan funcionan.
+
+Diseño revisado con Impeccable. Informe inicial y resolución de sus correcciones: finish-review.md y verdict.md.
+El detector de diseño se ejecutó una vez manualmente. El hook automático no se configuró; no afecta a la ejecución de la demo.
+Publicación del código autorizada en el repositorio público personal. Sin alojamiento web ni sistema real de reservas.
+Los cambios finales solicitados en margen del hero y hover del header se comprobaron en escritorio y móvil.

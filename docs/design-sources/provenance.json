@@ -1,0 +1,27 @@
+{
+  "impeccable": {
+    "repository": "https://github.com/pbakaus/impeccable",
+    "version": "4.9.2",
+    "commit": "d41d9860b0094dcb68030657da63461212835aaa",
+    "installed_path": ".agents/skills/impeccable",
+    "use": [
+      "context",
+      "concept-seed",
+      "craft-floor",
+      "detect",
+      "finish-review",
+      "document"
+    ]
+  },
+  "open_design": {
+    "repository": "https://github.com/nexu-io/open-design",
+    "website": "https://open-design.ai/es/",
+    "commit": "84dd08b5709bfa4bf4108ece8424d15e4062c982",
+    "use": "Adapted bold typography, editorial grid, state/focus and token guidance. A self-contained HTML export is generated for import. No OpenDesign Cloud session or generation is claimed.",
+    "references": [
+      "design-systems/bold/DESIGN.md",
+      "design-systems/editorial/DESIGN.md"
+    ],
+    "adaptations": "Original palette, hierarchy, responsive compositions and components for Senda; no copied site template."
+  }
+}

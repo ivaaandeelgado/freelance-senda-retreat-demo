@@ -1,0 +1,20 @@
+{
+  "name": "freelance-senda-retreat-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Senda: an independent travel-planning portfolio demo designed with Impeccable and OpenDesign.",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "start": "node tools/serve.mjs",
+    "build": "node tools/build.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
+    "test:browser": "playwright test",
+    "export:opendesign": "node tools/export-opendesign.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.0",
+    "esbuild": "0.28.2"
+  }
+}

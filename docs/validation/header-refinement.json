@@ -1,0 +1,25 @@
+{
+  "testedAt": "2026-11-16T09:12:24.270Z",
+  "passed": true,
+  "values": [
+    {
+      "width": 1440,
+      "gap": 28,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "gap": 18,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "gap": 18,
+      "overflow": false
+    }
+  ],
+  "hover": {
+    "background": "rgb(56, 93, 72)",
+    "underline": "none"
+  }
+}
